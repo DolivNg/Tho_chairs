@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Two Chairs</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="play">Play</string>
+    <string name="creators">Creators</string>
+    <string name="game_option">Game option</string>
+    <string name="number_question">Number of questions</string>
+    <string name="players">Players</string>
+    <string name="player_name">Player name</string>
+    <string name="interview_st">Interview with</string>
+    <string name="player">player</string>
+    <string name="questions_remain">Questions remain</string>
+    <string name="skip">skip</string>
+</resources>
