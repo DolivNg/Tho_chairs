@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.FragmentOptionGameBinding
+import com.vassagame.twochairs.game.GameViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
@@ -20,12 +22,12 @@ class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
     private val binding get() = _binding!!
     private var bundle = Bundle()
 
-    lateinit var viewModel: OptionGameViewModel
+    val viewModel by viewModel<OptionGameViewModel>()
     lateinit var optionGameAdapter: OptionGameAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[OptionGameViewModel::class.java]
+        //viewModel = ViewModelProvider(this)[OptionGameViewModel::class.java]
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

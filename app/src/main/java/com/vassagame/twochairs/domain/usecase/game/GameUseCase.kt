@@ -7,7 +7,7 @@ import com.vassagame.twochairs.domain.reposytory.GameRepository
 import java.util.*
 import kotlin.collections.ArrayList
 
-class GameUseCase {
+class GameUseCase(gameRepository: GameRepository) {
 
     private lateinit var  callBack: OnEventGameCallBack
 
@@ -20,13 +20,15 @@ class GameUseCase {
     var questionsArray : ArrayList<String> = ArrayList()
     var questionsNum = 0
 
+    init {
+        questionsArray = gameRepository.getQuestions().clone() as ArrayList<String>
+    }
+
     fun start(){
         callBack.startGame(arrayPlayer[choicePlayerId].namePlayer,createQuestion())
     }
 
-    fun setRepository(gameRepository: GameRepository){
-        questionsArray = gameRepository.getQuestions().clone() as ArrayList<String>
-    }
+
     @JvmName("setCallBack1")
     fun setCallBack(callBack: OnEventGameCallBack){
         this.callBack = callBack

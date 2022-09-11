@@ -7,9 +7,9 @@ import com.vassagame.twochairs.data.GameRepositoryImpl
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
 import com.vassagame.twochairs.domain.usecase.game.GameUseCase
 
-class GameViewModel : ViewModel() {
+class GameViewModel(val gameUseCase : GameUseCase) : ViewModel() {
     private var data: MutableLiveData<OptionGameEntity> = MutableLiveData()
-    private var gameUseCase = GameUseCase()
+
     private var num: MutableLiveData<Int> = MutableLiveData()
 
     init {
@@ -31,7 +31,7 @@ class GameViewModel : ViewModel() {
     fun startGame(callBack: GameUseCase.OnEventGameCallBack) {
         data.value?.let { gameUseCase.setGameOptions(it) }
         gameUseCase.setCallBack(callBack)
-        gameUseCase.setRepository(GameRepositoryImpl())
+
         gameUseCase.start()
         num.value= gameUseCase.questionsNum
     }

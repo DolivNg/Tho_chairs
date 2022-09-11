@@ -1,8 +1,9 @@
 package com.vassagame.twochairs.data
 
+import android.content.Context
 import com.vassagame.twochairs.domain.reposytory.GameRepository
 
-class GameRepositoryImpl : GameRepository {
+class GameRepositoryImpl(context : Context) : GameRepository {
     var array: ArrayList<String> = ArrayList()
     init {
         array.add("Ким ви хотіли стати, коли були дитиною?")
