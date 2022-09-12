@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.FragmentGameBinding
 import com.vassagame.twochairs.databinding.FragmentMenuBinding
@@ -61,7 +62,6 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
 
     override fun changePlayer(name: String) {
         viewGameAnimation.changeNameAnimation(binding.tVNamePlayer,name)
-
     }
 
     override fun changeQuestion(question: String) {
@@ -75,6 +75,6 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
 
 
     override fun endGame() {
-
+        findNavController().navigate(R.id.action_gameFragment_to_resultFragment)
     }
 }

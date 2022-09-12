@@ -5,18 +5,18 @@ import android.widget.TextView
 class ViewGameAnimation {
     fun startNameAnimation(textView : TextView, text : String) {
         textView.text = text
-        textView.translationX - 1000
+        textView.translationX =-1000F
 
         textView.scaleX = 1.4F
         textView.scaleY = 1.4F
 
         textView.animate()
             .translationX(0F)
-            .setDuration(250).withEndAction {
+            .setDuration(300).withEndAction {
                 textView.animate()
                     .scaleX(1.0F)
                     .scaleY(1.0F)
-                    .setDuration(100)
+                    .setDuration(150)
                     .start()
             }.start()
     }
@@ -27,7 +27,7 @@ class ViewGameAnimation {
 
         textView.animate()
             .translationY(0F)
-            .setDuration(350)
+            .setDuration(450)
             .start()
     }
 
@@ -35,20 +35,20 @@ class ViewGameAnimation {
         textView.animate()
             .scaleX(1.4F)
             .scaleY(1.4F)
-            .setDuration(100).withEndAction {
+            .setDuration(150).withEndAction {
                 textView.animate().translationX(1000F)
-                    .setDuration(200).withEndAction {
+                    .setDuration(300).withEndAction {
 
                         textView.translationX = -1000F
                         textView.text = text
 
                         textView.animate()
                             .translationX(0F)
-                            .setDuration(200).withEndAction {
+                            .setDuration(300).withEndAction {
                                 textView.animate()
                                     .scaleX(1.0F)
                                     .scaleY(1.0F)
-                                    .setDuration(100)
+                                    .setDuration(150)
                                     .start()
                             }.start()
                     }.start()
@@ -58,8 +58,8 @@ class ViewGameAnimation {
      fun changeQuestionAnimation(textView : TextView, text : String) {
 
         textView.animate()
-            .translationY(-20F)
-            .setDuration(100).withEndAction {
+            .translationY(-40F)
+            .setDuration(150).withEndAction {
                 textView.animate()
                     .translationY(2000F)
                     .setDuration(300).withEndAction {
