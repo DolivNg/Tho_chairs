@@ -38,6 +38,4 @@ class OptionGameViewModel : ViewModel() {
         dataGame?.listNames?.add(string)
         data.value = dataGame!!
     }
-
-
 }

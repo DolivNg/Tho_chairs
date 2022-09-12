@@ -12,4 +12,8 @@
     <string name="player">player</string>
     <string name="questions_remain">Questions remain</string>
     <string name="skip">skip</string>
+    <string name="title_size_text">26dp</string>
+    <string name="retry_play">Play again</string>
+    <string name="change_player">Change player</string>
+    <string name="back_menu">Back menu</string>
 </resources>
