@@ -16,4 +16,5 @@
     <string name="retry_play">Play again</string>
     <string name="change_player">Change player</string>
     <string name="back_menu">Back menu</string>
+    <string name="skiped">Skiped</string>
 </resources>
