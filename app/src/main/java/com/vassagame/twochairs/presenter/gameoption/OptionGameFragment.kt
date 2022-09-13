@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.gameoption
+package com.vassagame.twochairs.presenter.gameoption
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.FragmentOptionGameBinding
-import com.vassagame.twochairs.game.GameViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

@@ -1,10 +1,9 @@
-package com.vassagame.twochairs.gameoption
+package com.vassagame.twochairs.presenter.gameoption
 
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.text.Editable
 import android.widget.EditText
 import android.widget.LinearLayout
 import androidx.fragment.app.DialogFragment

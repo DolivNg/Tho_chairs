@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     android:orientation="vertical"
-    tools:context=".ResultFragment">
+    tools:context=".presenter.result.ResultFragment">
 
     <View
         android:id="@+id/view8"

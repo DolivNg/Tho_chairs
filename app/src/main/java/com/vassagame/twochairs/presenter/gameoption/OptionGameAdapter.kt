@@ -1,19 +1,11 @@
-package com.vassagame.twochairs.gameoption
+package com.vassagame.twochairs.presenter.gameoption
 
 import android.content.Context
-import android.database.DataSetObserver
 import android.graphics.drawable.Drawable
-import android.os.Parcel
-import android.os.Parcelable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
-import android.widget.ListAdapter
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.PlayerRecycleLoyoutBinding

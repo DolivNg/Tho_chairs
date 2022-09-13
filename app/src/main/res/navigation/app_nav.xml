@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/optionGameFragment"
-        android:name="com.vassagame.twochairs.gameoption.OptionGameFragment"
+        android:name="com.vassagame.twochairs.presenter.gameoption.OptionGameFragment"
         android:label="fragment_option_game"
         tools:layout="@layout/fragment_option_game" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
-        android:name="com.vassagame.twochairs.game.GameFragment"
+        android:name="com.vassagame.twochairs.presenter.game.GameFragment"
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_creator" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.vassagame.twochairs.ResultFragment"
+        android:name="com.vassagame.twochairs.presenter.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
 </navigation>

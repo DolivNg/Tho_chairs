@@ -1,16 +1,13 @@
-package com.vassagame.twochairs.game
+package com.vassagame.twochairs.presenter.game
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.FragmentGameBinding
-import com.vassagame.twochairs.databinding.FragmentMenuBinding
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
 import com.vassagame.twochairs.domain.usecase.game.GameUseCase
 import org.koin.androidx.viewmodel.ext.android.viewModel

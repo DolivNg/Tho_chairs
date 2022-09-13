@@ -1,9 +1,8 @@
-package com.vassagame.twochairs.game
+package com.vassagame.twochairs.presenter.game
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.vassagame.twochairs.data.GameRepositoryImpl
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
 import com.vassagame.twochairs.domain.usecase.game.GameUseCase
 

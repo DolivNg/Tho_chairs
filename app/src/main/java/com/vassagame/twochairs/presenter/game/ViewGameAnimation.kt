@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.game
+package com.vassagame.twochairs.presenter.game
 
 import android.widget.TextView
 

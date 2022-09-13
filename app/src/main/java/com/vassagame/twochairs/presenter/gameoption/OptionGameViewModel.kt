@@ -1,6 +1,5 @@
-package com.vassagame.twochairs.gameoption
+package com.vassagame.twochairs.presenter.gameoption
 
-import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
