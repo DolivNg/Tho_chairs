@@ -12,7 +12,9 @@ class GameUseCase(gameRepository: GameRepository) {
     private lateinit var callBack: OnEventGameCallBack
     private var random = Random()
 
-    var arrayPlayer: ArrayList<PlayerEntity> = ArrayList()
+    private lateinit var optionGame : OptionGameEntity
+
+
     var arrayId: ArrayList<Int> = ArrayList()
     var questionsArray: ArrayList<String> = ArrayList()
 
@@ -27,7 +29,7 @@ class GameUseCase(gameRepository: GameRepository) {
      * start() - start game
      */
     fun start() {
-        callBack.startGame(arrayPlayer[choicePlayerId].namePlayer, createQuestion())
+        callBack.startGame(optionGame.playerEntity[choicePlayerId].namePlayer, createQuestion())
         quantityQuestions()
     }
 
@@ -38,15 +40,9 @@ class GameUseCase(gameRepository: GameRepository) {
     }
 
     fun setGameOptions(optionGame: OptionGameEntity) {
+        this.optionGame = optionGame
         var id = 0;
         optionGame.listNames.forEach {
-            arrayPlayer.add(
-                PlayerEntity(
-                    it,
-                    optionGame.numberQuestions,
-                    0, 0, 0
-                )
-            )
             arrayId.add(id)
             id++
         }
@@ -71,11 +67,11 @@ class GameUseCase(gameRepository: GameRepository) {
      * */
     fun nextQuestions(action: Int) {
         if (action == -1)
-            arrayPlayer[choicePlayerId].negativeAnswer++
+            optionGame.playerEntity[choicePlayerId].negativeAnswer++
         if (action == 1)
-            arrayPlayer[choicePlayerId].positiveAnswer++
+            optionGame.playerEntity[choicePlayerId].positiveAnswer++
 
-        arrayPlayer[choicePlayerId].questionsLost--
+        optionGame.playerEntity[choicePlayerId].questionsLost--
 
         changePlayer()
         quantityQuestions()
@@ -87,17 +83,17 @@ class GameUseCase(gameRepository: GameRepository) {
      * quantityQuestions() - include global variable
      */
     private fun quantityQuestions() {
-        quantityQuestions = arrayPlayer[choicePlayerId].questionsLost
+        quantityQuestions = optionGame.playerEntity[choicePlayerId].questionsLost
     }
 
     /**
      * changePlayer() - control when player no have question
      */
     private fun changePlayer() {
-        if (arrayPlayer[choicePlayerId].questionsLost <= 0) {
+        if (optionGame.playerEntity[choicePlayerId].questionsLost <= 0) {
             arrayId.remove(choicePlayerId)
             choicePlayer()
-            callBack.changePlayer(arrayPlayer[choicePlayerId].namePlayer)
+            callBack.changePlayer(optionGame.playerEntity[choicePlayerId].namePlayer)
         }
     }
 
@@ -110,7 +106,7 @@ class GameUseCase(gameRepository: GameRepository) {
         questionsArray.remove(question)
 
         val arrayName = ArrayList<String>()
-        arrayPlayer.forEachIndexed { id, it -> if (id != choicePlayerId) arrayName.add(it.namePlayer) }
+        optionGame.playerEntity.forEachIndexed { id, it -> if (id != choicePlayerId) arrayName.add(it.namePlayer) }
 
         arrayName.add("Veduchiy")//TODO Change "veduchiy", get out Repository
 
@@ -122,6 +118,7 @@ class GameUseCase(gameRepository: GameRepository) {
      */
     fun skipQuestions() {
         quantityQuestions()
+        optionGame.playerEntity[choicePlayerId].skipQuestion++
         callBack.changeQuestion(createQuestion())
     }
 

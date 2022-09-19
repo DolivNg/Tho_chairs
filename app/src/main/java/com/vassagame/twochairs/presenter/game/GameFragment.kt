@@ -24,6 +24,8 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
 
     private val viewModel by viewModel<GameViewModel>()
 
+    private val bundle = Bundle()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -72,6 +74,7 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
 
 
     override fun endGame() {
-        findNavController().navigate(R.id.action_gameFragment_to_resultFragment)
+        bundle.putParcelable(KEY,viewModel.getData().value)
+        findNavController().navigate(R.id.action_gameFragment_to_resultFragment,bundle)
     }
 }

@@ -30,8 +30,6 @@ class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -60,7 +58,7 @@ class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
 
         val addNameDialog = AddNameDialog(this)
 
-        binding.imageButtonAdd.setOnClickListener {
+        binding.imBtnAdd.setOnClickListener {
             addNameDialog.show(parentFragmentManager, "name")
         }
         binding.imageButtonDelete.setOnClickListener {
@@ -69,9 +67,8 @@ class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
             optionGameAdapter.deSelectAll()
         }
         binding.buttonPlayGame.setOnClickListener {
-           viewModel.setNumber( binding.editTextNumber.text.toString())
-
-            findNavController().navigate(R.id.action_optionGameFragment_to_gameFragment,bundle)
+            viewModel.setNumber(binding.editTextNumber.text.toString())
+            findNavController().navigate(R.id.action_optionGameFragment_to_gameFragment, bundle)
         }
     }
 

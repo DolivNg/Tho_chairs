@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class OptionGameEntity(
+    var playerEntity : ArrayList<PlayerEntity> = ArrayList(),
     var listNames : ArrayList<String> = ArrayList(),
     var numberQuestions : Int = 10
 ) : Parcelable

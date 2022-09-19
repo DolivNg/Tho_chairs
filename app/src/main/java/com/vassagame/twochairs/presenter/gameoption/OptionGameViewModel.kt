@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
+import com.vassagame.twochairs.domain.entity.PlayerEntity
 
 class OptionGameViewModel : ViewModel() {
     private var data: MutableLiveData<OptionGameEntity> = MutableLiveData()
@@ -28,7 +29,19 @@ class OptionGameViewModel : ViewModel() {
         if (id.toInt() > 0) {
             val dataGame = data.value
             data.value?.numberQuestions = id.toInt()
+            createEntity()
             data.value = dataGame!!
+        }
+    }
+    private fun createEntity(){
+        data.value?.listNames?.forEach {
+            data.value?.playerEntity?.add(
+                PlayerEntity(
+                    it,
+                    data.value!!.numberQuestions,
+                    0, 0, 0
+                )
+            )
         }
     }
 

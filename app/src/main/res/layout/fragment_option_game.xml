@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
     tools:context=".presenter.gameoption.OptionGameFragment">
 
     <View
-        android:id="@+id/lol"
+        android:id="@+id/viewOptGam1"
         android:layout_width="0dp"
         android:layout_height="10dp"
         android:background="@drawable/line"
@@ -16,34 +17,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tVTitleOptionGame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/revalia"
         android:text="@string/game_option"
-        android:textSize="@string/title_size_text"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lol" />
+        app:layout_constraintTop_toBottomOf="@+id/viewOptGam1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:foregroundGravity="center"
-
-
-        app:layout_constraintBottom_toTopOf="@+id/view20"
+        app:layout_constraintBottom_toTopOf="@+id/viewOptGam2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/tVSubTitle">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <View
-        android:id="@+id/view20"
+        android:id="@+id/viewOptGam2"
         android:layout_width="0dp"
         android:layout_height="10dp"
         android:background="@drawable/line"
@@ -54,7 +53,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/imageButtonAdd"
+        android:id="@+id/imBtnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_add_circle_24"
@@ -62,10 +61,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/listView"
         app:layout_constraintVertical_bias="1.0"
-        tools:ignore="SpeakableTextPresentCheck" />
+        tools:ignore="HardcodedText,SpeakableTextPresentCheck"
+        android:contentDescription="add Player name" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tVNumEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/number_question"
@@ -84,7 +84,8 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view20" />
+        app:layout_constraintTop_toBottomOf="@+id/viewOptGam2"
+        tools:ignore="HardcodedText" />
 
     <ImageButton
         android:id="@+id/imageButtonDelete"
@@ -94,7 +95,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/listView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/listView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:contentDescription="removePlayer"
+        tools:ignore="HardcodedText" />
     <View
         android:id="@+id/view20d"
         android:layout_width="0dp"
@@ -105,7 +108,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tVSubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -114,7 +117,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tVTitleOptionGame" />
 
     <Button
         android:id="@+id/buttonPlayGame"
