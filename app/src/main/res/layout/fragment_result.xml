@@ -15,15 +15,15 @@
         android:background="@drawable/line" />
 
     <TextView
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity ="center"
-        android:layout_gravity ="center"
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="0"
-        android:text="TextView" />
+        android:gravity="center"
+        android:text="@string/ressult_interview"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -32,7 +32,7 @@
         android:layout_weight="8" />
 
     <View
-        android:id="@+id/view9"
+        android:id="@+id/viewMiddle"
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_weight="0"
@@ -46,7 +46,7 @@
         android:gravity= "center">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/bttnPlayAgain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -55,7 +55,7 @@
             android:text="@string/retry_play" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/bttnChangePlayer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,7 +64,7 @@
 
         <Button
 
-            android:id="@+id/button3"
+            android:id="@+id/bttnBackMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

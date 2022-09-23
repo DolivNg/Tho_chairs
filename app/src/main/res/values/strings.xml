@@ -14,7 +14,8 @@
     <string name="skip">skip</string>
     <string name="title_size_text">26dp</string>
     <string name="retry_play">Play again</string>
-    <string name="change_player">Change player</string>
+    <string name="change_player">New Game</string>
     <string name="back_menu">Back menu</string>
     <string name="skiped">Skiped</string>
+    <string name="ressult_interview">Ressult interview</string>
 </resources>

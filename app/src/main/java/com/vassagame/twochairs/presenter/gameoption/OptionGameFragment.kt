@@ -66,15 +66,22 @@ class OptionGameFragment : Fragment(), AddNameDialog.AlertDialogCallback {
             binding.listView.adapter?.notifyDataSetChanged()
             optionGameAdapter.deSelectAll()
         }
+
+
         binding.buttonPlayGame.setOnClickListener {
             viewModel.setNumber(binding.editTextNumber.text.toString())
-            findNavController().navigate(R.id.action_optionGameFragment_to_gameFragment, bundle)
+            if (viewModel.getData().value?.listNames?.size!! >= 1)
+                if (binding.editTextNumber.text.toString() != "")
+                    if (binding.editTextNumber.text.toString().toInt() > 0)
+                        findNavController().navigate(
+                            R.id.action_optionGameFragment_to_gameFragment,
+                            bundle
+                        )
         }
     }
 
     @SuppressLint("NotifyDataSetChanged")
     override fun callFragment(string: String) {
-
         viewModel.addName(string)
     }
 }

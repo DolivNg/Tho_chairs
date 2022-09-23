@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vassagame.twochairs.R
 import com.vassagame.twochairs.databinding.FragmentOptionGameBinding
@@ -37,8 +38,18 @@ class ResultFragment : Fragment() {
         var optionGameEntity = OptionGameEntity()
         if (arguments != null)
             optionGameEntity = arguments?.get(KEY) as OptionGameEntity
-        binding.recyclerView.layoutManager = LinearLayoutManager(context);
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
         ResultAdapter(optionGameEntity).also { binding.recyclerView.adapter = it }
         binding.recyclerView.adapter?.notifyDataSetChanged()
+
+        val bundle = Bundle()
+        bundle.putParcelable(KEY,optionGameEntity)
+
+        binding.bttnChangePlayer.setOnClickListener {
+            findNavController().navigate(R.id.action_resultFragment_to_optionGameFragment,bundle)}
+        binding.bttnBackMenu.setOnClickListener {
+            findNavController().navigate(R.id.action_resultFragment_to_menuFragment)}
+        binding.bttnPlayAgain.setOnClickListener {
+            findNavController().navigate(R.id.action_resultFragment_to_gameFragment,bundle)}
     }
 }

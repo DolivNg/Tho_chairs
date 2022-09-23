@@ -42,7 +42,10 @@ class GameUseCase(gameRepository: GameRepository) {
     fun setGameOptions(optionGame: OptionGameEntity) {
         this.optionGame = optionGame
         var id = 0;
-        optionGame.listNames.forEach {
+        optionGame.playerEntity.forEach {
+            it.questionsLost = optionGame.numberQuestions
+        }
+        optionGame.listNames.forEach { _ ->
             arrayId.add(id)
             id++
         }

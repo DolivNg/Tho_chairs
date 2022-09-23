@@ -26,6 +26,7 @@ class OptionGameViewModel : ViewModel() {
     }
 
     fun setNumber(id: String) {
+        if (id != "")
         if (id.toInt() > 0) {
             val dataGame = data.value
             data.value?.numberQuestions = id.toInt()

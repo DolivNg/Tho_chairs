@@ -9,13 +9,20 @@
         android:id="@+id/menuFragment"
         android:name="com.vassagame.twochairs.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+        tools:layout="@layout/fragment_menu"
+        >
         <action
             android:id="@+id/action_menuFragment_to_optionGameFragment"
-            app:destination="@id/optionGameFragment" />
+            app:destination="@id/optionGameFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_menuFragment_to_creatorFragment"
-            app:destination="@id/creatorFragment" />
+            app:destination="@id/creatorFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/optionGameFragment"
@@ -24,7 +31,8 @@
         tools:layout="@layout/fragment_option_game" >
         <action
             android:id="@+id/action_optionGameFragment_to_gameFragment"
-            app:destination="@id/gameFragment" />
+            app:destination="@id/gameFragment"
+            app:launchSingleTop="true" />
     </fragment>
     <fragment
         android:id="@+id/gameFragment"
@@ -44,5 +52,15 @@
         android:id="@+id/resultFragment"
         android:name="com.vassagame.twochairs.presenter.result.ResultFragment"
         android:label="fragment_result"
-        tools:layout="@layout/fragment_result" />
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_optionGameFragment"
+            app:destination="@id/optionGameFragment" />
+        <action
+            android:id="@+id/action_resultFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
 </navigation>

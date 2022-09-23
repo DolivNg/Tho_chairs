@@ -14,10 +14,10 @@ class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewH
     OptionGameViewHolder.CallAdapter {
     private var optionGameViewHolders: ArrayList<OptionGameViewHolder> = ArrayList()
     var nameArray: ArrayList<String> = ArrayList()
-    var drawable: Drawable
+    private var drawable: Drawable
 
     init {
-        drawable = ContextCompat.getDrawable(context, R.drawable.hp_progresbar)!!;
+        drawable = ContextCompat.getDrawable(context, R.drawable.hp_progresbar)!!
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionGameViewHolder {
@@ -31,7 +31,6 @@ class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewH
 
     override fun onBindViewHolder(holder: OptionGameViewHolder, position: Int) {
         holder.bind(nameArray[position], position)
-
     }
 
     fun deleteName() : Int {
@@ -70,9 +69,9 @@ class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewH
 class OptionGameViewHolder(
     itemView: View,
     val binding: PlayerRecycleLoyoutBinding,
-    val call: CallAdapter
+    private val call: CallAdapter
 ) : RecyclerView.ViewHolder(itemView) {
-    var id = 0;
+    var id = 0
     fun bind(string: String, id: Int) {
         binding.textViewName.text = string
         binding.textViewName.tag = 0
