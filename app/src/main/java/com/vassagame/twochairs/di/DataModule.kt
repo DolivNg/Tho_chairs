@@ -3,9 +3,9 @@ package com.vassagame.twochairs.di
 
 import android.app.Application
 import androidx.room.Room
-import com.vassagame.twochairs.data.GameRepositoryImpl
+import com.vassagame.twochairs.data.QuestionRepositoryImpl
 import com.vassagame.twochairs.data.db.AppDatabase
-import com.vassagame.twochairs.domain.reposytory.GameRepository
+import com.vassagame.twochairs.domain.reposytory.QuestionRepository
 
 import org.koin.dsl.module
 
@@ -25,8 +25,8 @@ val dataModule = module {
     //single { provideCountriesDao(get()) }
 
 
-    single<GameRepository>{
-        GameRepositoryImpl(context = get(), db = get())
+    single<QuestionRepository>{
+        QuestionRepositoryImpl(context = get(), db = get())
     }
 
 }

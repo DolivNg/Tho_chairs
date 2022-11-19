@@ -9,5 +9,5 @@ data class PlayerEntity (
     var questionsLost : Int = 0,
     var positiveAnswer : Int = 0,
     var negativeAnswer : Int = 0,
-    var skipQuestion : Int = 0,
+    var skipQuestion : Int = 0
 ): Parcelable
