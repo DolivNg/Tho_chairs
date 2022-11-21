@@ -16,6 +16,6 @@
     <string name="retry_play">Play again</string>
     <string name="change_player">New Game</string>
     <string name="back_menu">Back menu</string>
-    <string name="skiped">Skiped</string>
-    <string name="ressult_interview">Ressult interview</string>
+    <string name="skiped">Skipped</string>
+    <string name="ressult_interview">Result interview</string>
 </resources>

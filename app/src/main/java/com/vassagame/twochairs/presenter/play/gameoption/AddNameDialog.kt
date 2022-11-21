@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.gameoption
+package com.vassagame.twochairs.presenter.play.gameoption
 
 
 import android.app.AlertDialog

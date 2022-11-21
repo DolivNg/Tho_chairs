@@ -1,13 +1,13 @@
 package com.vassagame.twochairs.di
 
-import com.vassagame.twochairs.presenter.game.GameViewModel
-import com.vassagame.twochairs.presenter.gameoption.OptionGameViewModel
+import com.vassagame.twochairs.presenter.play.game.GameViewModel
+import com.vassagame.twochairs.presenter.play.gameoption.OptionGameViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
     viewModel<GameViewModel> {
-        GameViewModel(get())
+        GameViewModel(get(),get(),get())
     }
 
     viewModel<OptionGameViewModel> {

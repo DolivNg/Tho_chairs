@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.packs
+package com.vassagame.twochairs.presenter.settingquest.packs
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

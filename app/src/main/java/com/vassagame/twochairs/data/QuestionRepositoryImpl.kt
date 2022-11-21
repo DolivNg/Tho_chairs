@@ -48,8 +48,7 @@ class QuestionRepositoryImpl(val context: Context, val db: AppDatabase) : Questi
 
     override suspend fun getPackAll(): ArrayList<PackDomEntity> {
         val listData = db.packDao().getPackAll()
-        val map = PackMapper()
-        return map.packArrayDataToDomain(listData as ArrayList<PackEntity>)
+        return PackMapper.packArrayDataToDomain(listData as ArrayList<PackEntity>)
     }
 
     override suspend fun addNewPack(pack: PackDomEntity) {

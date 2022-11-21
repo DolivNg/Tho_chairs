@@ -2,18 +2,17 @@ package com.vassagame.twochairs.domain.usecase.game
 
 
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
-import com.vassagame.twochairs.domain.entity.PlayerEntity
-import com.vassagame.twochairs.domain.reposytory.GameRepository
+
+import com.vassagame.twochairs.domain.reposytory.QuestionRepository
 import java.util.*
 import kotlin.collections.ArrayList
 
-class GameUseCase(gameRepository: GameRepository) {
+class GameUseCase(gameRepository: QuestionRepository) {
 
     private lateinit var callBack: OnEventGameCallBack
-    private var random = Random()
 
     private lateinit var optionGame : OptionGameEntity
-
+    private var random = Random()
 
     var arrayId: ArrayList<Int> = ArrayList()
     var questionsArray: ArrayList<String> = ArrayList()
@@ -22,7 +21,7 @@ class GameUseCase(gameRepository: GameRepository) {
     var quantityQuestions = 0
 
     init {
-        questionsArray = gameRepository.getQuestions().clone() as ArrayList<String>
+        //questionsArray = gameRepository.getQuestions().clone() as ArrayList<String>
     }
 
     /**
@@ -58,10 +57,10 @@ class GameUseCase(gameRepository: GameRepository) {
      * choicePlayer() - change player, if arrayId.size call for end game
      */
     private fun choicePlayer() {
-        if (arrayId.size == 0)
+        /*if (arrayId.size == 0)
             callBack.endGame()
         else
-            choicePlayerId = arrayId[random.nextInt(arrayId.size)]
+            choicePlayerId = arrayId[random.nextInt(arrayId.size)]*/
     }
 
     /**
@@ -69,7 +68,7 @@ class GameUseCase(gameRepository: GameRepository) {
      * action - if -1 -> negative else 1 -> positive
      * */
     fun nextQuestions(action: Int) {
-        if (action == -1)
+       /* if (action == -1)
             optionGame.playerEntity[choicePlayerId].negativeAnswer++
         if (action == 1)
             optionGame.playerEntity[choicePlayerId].positiveAnswer++
@@ -77,7 +76,7 @@ class GameUseCase(gameRepository: GameRepository) {
         optionGame.playerEntity[choicePlayerId].questionsLost--
 
         changePlayer()
-        quantityQuestions()
+        quantityQuestions()*/
 
         callBack.changeQuestion(createQuestion())
     }
@@ -104,7 +103,7 @@ class GameUseCase(gameRepository: GameRepository) {
      * createQuestion()
      */
     private fun createQuestion(): String {
-        val question =
+       /* val question =
             questionsArray[random.nextInt(questionsArray.size)]
         questionsArray.remove(question)
 
@@ -113,16 +112,17 @@ class GameUseCase(gameRepository: GameRepository) {
 
         arrayName.add("Veduchiy")//TODO Change "veduchiy", get out Repository
 
-        return question.replace("[player]", newValue = arrayName[random.nextInt(arrayName.size)])
+        return question.replace("[player]", newValue = arrayName[random.nextInt(arrayName.size)])*/
+        return "kek"
     }
 
     /**
      * skipQuestions - call to change UI
      */
     fun skipQuestions() {
-        quantityQuestions()
+        /*quantityQuestions()
         optionGame.playerEntity[choicePlayerId].skipQuestion++
-        callBack.changeQuestion(createQuestion())
+        callBack.changeQuestion(createQuestion())*/
     }
 
     interface OnEventGameCallBack {
