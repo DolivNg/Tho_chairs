@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.gameoption
+package com.vassagame.twochairs.presenter.play.gameoption
 
 import android.content.Context
 import android.graphics.drawable.Drawable

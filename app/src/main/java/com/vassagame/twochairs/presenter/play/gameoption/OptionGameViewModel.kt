@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.gameoption
+package com.vassagame.twochairs.presenter.play.gameoption
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
