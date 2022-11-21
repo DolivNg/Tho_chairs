@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.result
+package com.vassagame.twochairs.presenter.play.result
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.vassagame.twochairs.R
-import com.vassagame.twochairs.databinding.FragmentOptionGameBinding
 import com.vassagame.twochairs.databinding.FragmentResultBinding
 import com.vassagame.twochairs.domain.entity.OptionGameEntity
 

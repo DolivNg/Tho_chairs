@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.result
+package com.vassagame.twochairs.presenter.play.result
 
 
 import android.view.LayoutInflater
