@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.presenter.game
+package com.vassagame.twochairs.presenter.play.game
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -18,7 +18,7 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
         fun newInstance() = GameFragment()
     }
 
-    private var viewGameAnimation = ViewGameAnimation()
+
     private var _binding: FragmentGameBinding? = null
     private val binding get() = _binding!!
 
@@ -39,6 +39,7 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
         if (arguments != null)
             viewModel.setData(arguments?.get(KEY) as OptionGameEntity)
 
+        viewModel.lunchTest()//
         viewModel.getNum().observe(viewLifecycleOwner) {
             binding.tVQuewstionLost.text = "$it"
         }
@@ -50,16 +51,16 @@ class GameFragment : Fragment(), GameUseCase.OnEventGameCallBack {
     }
 
     override fun changePlayer(name: String) {
-        viewGameAnimation.changeNameAnimation(binding.tVNamePlayer,name)
+        ViewGameAnimation.changeNameAnimation(binding.tVNamePlayer,name)
     }
 
     override fun changeQuestion(question: String) {
-        viewGameAnimation.changeQuestionAnimation(binding.tVQuestion,question)
+        ViewGameAnimation.changeQuestionAnimation(binding.tVQuestion,question)
     }
 
     override fun startGame(name: String, question: String) {
-        viewGameAnimation.startQuestionAnimation(binding.tVQuestion,question)
-        viewGameAnimation.startNameAnimation(binding.tVNamePlayer,name)
+        ViewGameAnimation.startQuestionAnimation(binding.tVQuestion,question)
+        ViewGameAnimation.startNameAnimation(binding.tVNamePlayer,name)
     }
 
 
