@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/linerQuestion">
+    <View
+        android:id="@+id/viewBoard"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@drawable/line"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tVQuestionList"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/cBQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tVtypeQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+</LinearLayout>
