@@ -1,4 +1,4 @@
-package com.vassagame.twochairs.data.db.Mapper
+package com.vassagame.twochairs.data.db.mapper
 
 
 import com.vassagame.twochairs.data.db.entity.QuestionEntity
@@ -9,7 +9,6 @@ class QuestionMapper {
         fun questionDataToDomain(questionData: QuestionEntity): QuestionDomEntity {
             return QuestionDomEntity(
                 id = questionData.id,
-                question = questionData.question,
                 gender = questionData.gender,
                 packId = questionData.packId,
                 selected = questionData.selected,
@@ -21,7 +20,6 @@ class QuestionMapper {
         fun questionDomainToData(questionDomain: QuestionDomEntity): QuestionEntity {
             return QuestionEntity(
                 id = questionDomain.id,
-                question = questionDomain.question,
                 gender = questionDomain.gender,
                 packId = questionDomain.packId,
                 selected = questionDomain.selected,
@@ -29,6 +27,17 @@ class QuestionMapper {
                 standard = questionDomain.standard
             )
         }
+
+        fun questionArrayDataToDomainList(packArrayData: ArrayList<QuestionEntity>): ArrayList<QuestionDomEntity> {
+            val array = ArrayList<QuestionDomEntity>()
+            packArrayData.forEach {
+                array.add(
+                    questionDataToDomain(it)
+                )
+            }
+            return array
+        }
+
     }
 
 }

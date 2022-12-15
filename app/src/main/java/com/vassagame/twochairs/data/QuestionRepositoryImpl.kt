@@ -2,8 +2,7 @@ package com.vassagame.twochairs.data
 
 import android.content.Context
 import com.vassagame.twochairs.data.db.AppDatabase
-import com.vassagame.twochairs.data.db.Mapper.PackMapper
-import com.vassagame.twochairs.data.db.entity.PackEntity
+import com.vassagame.twochairs.data.db.mapper.PackMapper
 import com.vassagame.twochairs.domain.entity.dbentity.PackDomEntity
 import com.vassagame.twochairs.domain.entity.dbentity.QuestionDomEntity
 import com.vassagame.twochairs.domain.reposytory.QuestionRepository
@@ -48,7 +47,7 @@ class QuestionRepositoryImpl(val context: Context, val db: AppDatabase) : Questi
 
     override suspend fun getPackAll(): ArrayList<PackDomEntity> {
         val listData = db.packDao().getPackAll()
-        return PackMapper.packArrayDataToDomain(listData as ArrayList<PackEntity>)
+        return PackMapper.packArrayDataToDomain(listData)//.test2(listData)
     }
 
     override suspend fun addNewPack(pack: PackDomEntity) {
@@ -56,6 +55,7 @@ class QuestionRepositoryImpl(val context: Context, val db: AppDatabase) : Questi
     }
 
     override suspend fun removePack(packName: String) {
+        val listData = db.packDao().getPackAll()
         TODO("Not yet implemented")
     }
 
@@ -68,6 +68,10 @@ class QuestionRepositoryImpl(val context: Context, val db: AppDatabase) : Questi
     }
 
     override suspend fun removeQuestion(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun test() {
         TODO("Not yet implemented")
     }
 

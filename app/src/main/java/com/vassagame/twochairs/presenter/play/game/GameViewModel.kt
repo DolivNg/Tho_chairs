@@ -63,6 +63,9 @@ class GameViewModel(private val gameUseCase: GameUseCase,
                     Log.d("vasa","empty")
                 else
                     Log.d("vasa","full")
+                localList.forEach{
+                    Log.d("vasa","${it.id}")
+                }
             }
         }
 

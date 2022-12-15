@@ -19,5 +19,5 @@ interface QuestionRepository {
 
     suspend fun removeQuestion(id : Int)
 
-
+    suspend fun test()
 }

@@ -1,20 +1,24 @@
-package com.vassagame.twochairs.data.db.Mapper
+package com.vassagame.twochairs.data.db.mapper
 
 import com.vassagame.twochairs.data.db.entity.PackEntity
+import com.vassagame.twochairs.data.db.entity.PackFull
 import com.vassagame.twochairs.domain.entity.dbentity.PackDomEntity
+import com.vassagame.twochairs.domain.entity.dbentity.QuestionDomEntity
 
- class PackMapper {
+class PackMapper {
      companion object {
-         fun packDataToDomain(packData: PackEntity): PackDomEntity {
+
+         private fun packDataToDomain(packData: PackEntity): PackDomEntity {
              return PackDomEntity(
                  id = packData.id,
                  packName = packData.packName,
                  standard = packData.standard,
-                 selected = packData.selected
+                 selected = packData.selected,
+
              )
          }
 
-         fun packArrayDataToDomain(packArrayData: ArrayList<PackEntity>): ArrayList<PackDomEntity> {
+         fun packArrayDataToDomain(packArrayData: List<PackEntity>): List<PackDomEntity> {
              val array = ArrayList<PackDomEntity>()
              packArrayData.forEach {
                  array.add(
@@ -24,7 +28,7 @@ import com.vassagame.twochairs.domain.entity.dbentity.PackDomEntity
              return array
          }
 
-         fun packDomainToData(packDomain: PackDomEntity): PackEntity {
+         private fun packDomainToData(packDomain: PackDomEntity): PackEntity {
              return PackEntity(
                  id = packDomain.id,
                  packName = packDomain.packName,
@@ -33,7 +37,7 @@ import com.vassagame.twochairs.domain.entity.dbentity.PackDomEntity
              )
          }
 
-         fun packArrayDomainToData(packArrayDomain: ArrayList<PackDomEntity>): ArrayList<PackEntity> {
+         fun packArrayDomainToData(packArrayDomain: List<PackDomEntity>): List<PackEntity> {
              val array = ArrayList<PackEntity>()
              packArrayDomain.forEach {
                  array.add(

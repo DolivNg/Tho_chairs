@@ -33,7 +33,7 @@ class QuestionListAdapter : RecyclerView.Adapter<QuestionListAdapter.QuestionVie
         private var id = 0
 
         fun bind(id: Int, questionDomEntity: QuestionDomEntity) {
-            binding.tVQuestionList.text = questionDomEntity.question
+            //binding.tVQuestionList.text = questionDomEntity.packId//TODO
             binding.tVtypeQuestion.text = if (questionDomEntity.standard){"Standard"}else{"User's"}
             binding.cBQuestion.setOnClickListener {  }
             binding.linerQuestion.setOnClickListener {  }

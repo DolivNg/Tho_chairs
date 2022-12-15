@@ -18,4 +18,11 @@
     <string name="back_menu">Back menu</string>
     <string name="skiped">Skipped</string>
     <string name="ressult_interview">Result interview</string>
+
+    <string name="action_help">Help</string>
+    <string name="action_add_pack">Create new pack</string>
+    <string name="action_delete_pack">Delete</string>
+    <string name="action_add_quest">Create question</string>
+    <string name="action_refactor">Refactor</string>
+    <string name="action_rename">Rename</string>
 </resources>

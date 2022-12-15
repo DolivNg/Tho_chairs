@@ -8,7 +8,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.vassagame.twochairs.R
-import com.vassagame.twochairs.databinding.PlayerRecycleLoyoutBinding
+import com.vassagame.twochairs.databinding.PlayerRecycleLayoutBinding
+
 
 class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewHolder>(),
     OptionGameViewHolder.CallAdapter {
@@ -21,8 +22,8 @@ class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewH
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OptionGameViewHolder {
-        val binding =
-            PlayerRecycleLoyoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = PlayerRecycleLayoutBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
         val holder = OptionGameViewHolder(binding.root, binding, this)
 
         optionGameViewHolders.add(holder)
@@ -68,7 +69,7 @@ class OptionGameAdapter(context: Context) : RecyclerView.Adapter<OptionGameViewH
 
 class OptionGameViewHolder(
     itemView: View,
-    val binding: PlayerRecycleLoyoutBinding,
+    val binding: PlayerRecycleLayoutBinding,
     private val call: CallAdapter
 ) : RecyclerView.ViewHolder(itemView) {
     var id = 0

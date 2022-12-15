@@ -7,5 +7,4 @@ data class PackDomEntity(
     val packName: String,
     val standard: Boolean,
     val selected: Boolean,
-    //val questionList: ArrayList<QuestionDomEntity>
 )
